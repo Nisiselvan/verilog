@@ -1,0 +1,64 @@
+$date
+	Fri Oct 23 06:31:01 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module binary_to_gray_tb $end
+$var wire 4 ! gray [3:0] $end
+$var reg 4 " binary [3:0] $end
+$scope module dut $end
+$var wire 4 # binary [3:0] $end
+$var wire 4 $ gray [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10000
+b1 !
+b1 $
+b1 "
+b1 #
+#20000
+b11 !
+b11 $
+b10 "
+b10 #
+#30000
+b10 !
+b10 $
+b11 "
+b11 #
+#40000
+b110 !
+b110 $
+b100 "
+b100 #
+#50000
+b111 !
+b111 $
+b101 "
+b101 #
+#60000
+b101 !
+b101 $
+b110 "
+b110 #
+#70000
+b100 !
+b100 $
+b111 "
+b111 #
+#80000
