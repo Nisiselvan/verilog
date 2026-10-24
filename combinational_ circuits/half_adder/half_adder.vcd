@@ -1,5 +1,5 @@
 $date
-	Thu Oct 15 04:33:10 2026
+	Sat Oct 24 04:10:22 2026
 $end
 $version
 	Icarus Verilog
@@ -12,7 +12,7 @@ $var wire 1 ! Sum $end
 $var wire 1 " Carry $end
 $var reg 1 # A $end
 $var reg 1 $ B $end
-$scope module uut $end
+$scope module dut $end
 $var wire 1 # A $end
 $var wire 1 $ B $end
 $var wire 1 " Carry $end

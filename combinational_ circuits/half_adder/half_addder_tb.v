@@ -3,15 +3,13 @@ module half_addder_tb;
     reg A, B;
     wire Sum, Carry;
 
-    // Instantiate the Half Adder
-    half_adder uut (
+    half_adder dut (
         .A(A),
         .B(B),
         .Sum(Sum),
         .Carry(Carry)
     );
 
-    // Apply all possible input combinations
     initial begin
     $dumpfile("half_adder.vcd");
     $dumpvars(0, half_addder_tb);
