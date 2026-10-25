@@ -11,7 +11,10 @@ dual_and_or dut (
     .f(f), .g(g), .h(h), .i(i), .j(j),
     .x(x), .y(y)
 );
-
+initial begin
+    $dumpfile("dual_and_or.vcd");
+    $dumpvars(0,dual_and_or_tb);
+end
 initial begin
     $monitor("b=%b c=%b d=%b e=%b x=%b | a=%b f=%b g=%b h=%b i=%b j=%b y=%b",
              b, c, d, e, x, a, f, g, h, i, j, y);
