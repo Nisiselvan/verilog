@@ -6,7 +6,7 @@ module bit2_magnitude_comparator_tb;
     reg [1:0] A, B;
     wire A_gt_B, A_lt_B, A_eq_B;
 
-    bit2_magnitude_comparator uut (
+    bit2_magnitude_comparator dut ( 
         .A(A),
         .B(B),
         .A_gt_B(A_gt_B),

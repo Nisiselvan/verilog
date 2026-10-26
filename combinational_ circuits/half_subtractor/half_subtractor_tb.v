@@ -3,7 +3,7 @@ module half_subtractor_tb;
     reg A, B;
     wire D, Bout;
 
-    half_subtractor uut (
+    half_subtractor dut (
         .A(A),
         .B(B),
         .D(D),

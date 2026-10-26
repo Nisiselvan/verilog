@@ -19,7 +19,7 @@ initial begin
   a =3'b011;
    #10;
 
-   a=3'b101;
+   a=3'b111;
    #10;
    $finish;
 

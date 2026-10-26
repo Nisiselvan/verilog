@@ -3,7 +3,7 @@ module full_subtractor_tb;
     reg A, B, Bin;
     wire D, Bout;
 
-    full_subtractor uut (
+    full_subtractor dut (
         .A(A),
         .B(B),
         .Bin(Bin),
