@@ -1,0 +1,39 @@
+$date
+	Mon Oct 26 07:43:36 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module one_s_generator_tb $end
+$var wire 4 ! complement [3:0] $end
+$var reg 4 " data [3:0] $end
+$scope module dut $end
+$var wire 4 # complement [3:0] $end
+$var wire 4 $ data [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110 $
+b1001 #
+b110 "
+b1001 !
+$end
+#10000
+b1000 !
+b1000 #
+b111 "
+b111 $
+#20000
+b1 !
+b1 #
+b1110 "
+b1110 $
+#30000
