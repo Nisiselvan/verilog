@@ -1,0 +1,68 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x574fa4db5a40 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x574fa4db5bd0 .scope module, "odd_parity_checker_tb" "odd_parity_checker_tb" 3 4;
+ .timescale -9 -12;
+v0x574fa4dc9c90_0 .var "data", 3 0;
+v0x574fa4dc9d80_0 .net "odd", 0 0, L_0x574fa4dca0c0;  1 drivers
+v0x574fa4dc9e50_0 .var "parity_bit", 0 0;
+S_0x574fa4d7c490 .scope module, "dut" "odd_parity_checker" 3 10, 4 1 0, S_0x574fa4db5bd0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "data";
+    .port_info 1 /INPUT 1 "parity_bit";
+    .port_info 2 /OUTPUT 1 "odd";
+v0x574fa4d7c6c0_0 .net *"_ivl_0", 4 0, L_0x574fa4dc9f50;  1 drivers
+v0x574fa4dc99d0_0 .net "data", 3 0, v0x574fa4dc9c90_0;  1 drivers
+v0x574fa4dc9ab0_0 .net "odd", 0 0, L_0x574fa4dca0c0;  alias, 1 drivers
+v0x574fa4dc9b50_0 .net "parity_bit", 0 0, v0x574fa4dc9e50_0;  1 drivers
+L_0x574fa4dc9f50 .concat [ 1 4 0 0], v0x574fa4dc9e50_0, v0x574fa4dc9c90_0;
+L_0x574fa4dca0c0 .reduce/xor L_0x574fa4dc9f50;
+    .scope S_0x574fa4db5bd0;
+T_0 ;
+    %vpi_call/w 3 17 "$dumpfile", "odd_parity_checker.vcd" {0 0 0};
+    %vpi_call/w 3 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x574fa4db5bd0 {0 0 0};
+    %vpi_call/w 3 20 "$monitor", "time=%0t | data=%b | parity_bit=%b | odd=%b", $time, v0x574fa4dc9c90_0, v0x574fa4dc9e50_0, v0x574fa4dc9d80_0 {0 0 0};
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x574fa4dc9c90_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x574fa4dc9e50_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x574fa4dc9c90_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x574fa4dc9e50_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v0x574fa4dc9c90_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x574fa4dc9e50_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x574fa4dc9c90_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x574fa4dc9e50_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x574fa4dc9c90_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x574fa4dc9e50_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call/w 3 29 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "odd_parity_checker_tb.v";
+    "odd_parity_checker.v";
