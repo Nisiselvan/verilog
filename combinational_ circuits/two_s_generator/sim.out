@@ -1,0 +1,51 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x5a02db482950 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x5a02db482ae0 .scope module, "two_s_generator_tb" "two_s_generator_tb" 3 3;
+ .timescale -9 -12;
+v0x5a02db495230_0 .net "complement", 3 0, L_0x5a02db4954e0;  1 drivers
+v0x5a02db495320_0 .var "data", 3 0;
+S_0x5a02db449490 .scope module, "dut" "two_s_generator" 3 7, 4 1 0, S_0x5a02db482ae0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "data";
+    .port_info 1 /OUTPUT 4 "complement";
+L_0x5a02db4953f0 .functor NOT 4, v0x5a02db495320_0, C4<0000>, C4<0000>, C4<0000>;
+L_0x75572adb7018 .functor BUFT 1, C4<0001>, C4<0>, C4<0>, C4<0>;
+L_0x5a02db4954e0 .functor OR 4, L_0x5a02db4953f0, L_0x75572adb7018, C4<0000>, C4<0000>;
+v0x5a02db449670_0 .net *"_ivl_0", 3 0, L_0x5a02db4953f0;  1 drivers
+v0x5a02db494f50_0 .net/2u *"_ivl_2", 3 0, L_0x75572adb7018;  1 drivers
+v0x5a02db495030_0 .net "complement", 3 0, L_0x5a02db4954e0;  alias, 1 drivers
+v0x5a02db4950f0_0 .net "data", 3 0, v0x5a02db495320_0;  1 drivers
+    .scope S_0x5a02db482ae0;
+T_0 ;
+    %vpi_call/w 3 12 "$dumpfile", "two_s_generator.vcd" {0 0 0};
+    %vpi_call/w 3 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5a02db482ae0 {0 0 0};
+    %vpi_call/w 3 14 "$monitor", "time=%0t | data=%b | complement=%b", $time, v0x5a02db495320_0, v0x5a02db495230_0 {0 0 0};
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5a02db495320_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x5a02db495320_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x5a02db495320_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 24 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "two_s_generator_tb.v";
+    "two_s_generator.v";
