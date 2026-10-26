@@ -1,4 +1,4 @@
-module demux_1to4 (
+module demux_1_4 (
     input wire din,
     input wire [1:0] sel,
     output reg [3:0] y

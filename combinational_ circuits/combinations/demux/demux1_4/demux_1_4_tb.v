@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module demux_1to4_tb;
+module demux_1_4_tb;
 
 reg din;
 reg [1:0] sel;
@@ -12,8 +12,8 @@ demux_1to4 dut (
 );
 
 initial begin
-    $dumpfile("demux.vcd");
-    $dumpvars(0, demux_1to4_tb);
+    $dumpfile("demux_1_4.vcd");
+    $dumpvars(0, demux_1_4_tb);
 
     $monitor("Time=%0t | din=%b | sel=%b | y=%b",
     $time, din, sel, y);
