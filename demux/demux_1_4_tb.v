@@ -5,7 +5,7 @@ module demux_1to4_tb;
 reg din;
 reg [1:0] sel;
 wire [3:0] y;
-demux_1to4 uut (
+demux_1to4 dut (
     .din(din),
     .sel(sel),
     .y(y)
