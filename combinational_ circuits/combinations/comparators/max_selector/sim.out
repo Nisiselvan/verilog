@@ -1,0 +1,68 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x55c954a03f60 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x55c954a040f0 .scope module, "max_selector_tb" "max_selector_tb" 3 2;
+ .timescale -9 -12;
+v0x55c954a186b0_0 .var "a", 2 0;
+v0x55c954a187a0_0 .var "b", 2 0;
+v0x55c954a18870_0 .net "max", 2 0, L_0x55c954a18ae0;  1 drivers
+S_0x55c9549ca490 .scope module, "dut" "max_selector" 3 6, 4 1 0, S_0x55c954a040f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 3 "a";
+    .port_info 1 /INPUT 3 "b";
+    .port_info 2 /OUTPUT 3 "max";
+v0x55c9549ca6c0_0 .net *"_ivl_0", 0 0, L_0x55c954a18970;  1 drivers
+v0x55c954a183b0_0 .net "a", 2 0, v0x55c954a186b0_0;  1 drivers
+v0x55c954a18490_0 .net "b", 2 0, v0x55c954a187a0_0;  1 drivers
+v0x55c954a18550_0 .net "max", 2 0, L_0x55c954a18ae0;  alias, 1 drivers
+L_0x55c954a18970 .cmp/gt 3, v0x55c954a186b0_0, v0x55c954a187a0_0;
+L_0x55c954a18ae0 .functor MUXZ 3, v0x55c954a187a0_0, v0x55c954a186b0_0, L_0x55c954a18970, C4<>;
+    .scope S_0x55c954a040f0;
+T_0 ;
+    %vpi_call/w 3 13 "$dumpfile", "max_selector.vcd" {0 0 0};
+    %vpi_call/w 3 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55c954a040f0 {0 0 0};
+    %vpi_call/w 3 15 "$monitor", "time=%0t | a=%b | b=%b | max=%b", $time, v0x55c954a186b0_0, v0x55c954a187a0_0, v0x55c954a18870_0 {0 0 0};
+    %pushi/vec4 6, 0, 3;
+    %store/vec4 v0x55c954a186b0_0, 0, 3;
+    %pushi/vec4 5, 0, 3;
+    %store/vec4 v0x55c954a187a0_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 6, 0, 3;
+    %store/vec4 v0x55c954a186b0_0, 0, 3;
+    %pushi/vec4 4, 0, 3;
+    %store/vec4 v0x55c954a187a0_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 4, 0, 3;
+    %store/vec4 v0x55c954a186b0_0, 0, 3;
+    %pushi/vec4 3, 0, 3;
+    %store/vec4 v0x55c954a187a0_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 2, 0, 3;
+    %store/vec4 v0x55c954a186b0_0, 0, 3;
+    %pushi/vec4 4, 0, 3;
+    %store/vec4 v0x55c954a187a0_0, 0, 3;
+    %delay 10000, 0;
+    %pushi/vec4 5, 0, 3;
+    %store/vec4 v0x55c954a186b0_0, 0, 3;
+    %pushi/vec4 2, 0, 3;
+    %store/vec4 v0x55c954a187a0_0, 0, 3;
+    %delay 10000, 0;
+    %vpi_call/w 3 27 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "max_selector_tb.v";
+    "max_selector.v";

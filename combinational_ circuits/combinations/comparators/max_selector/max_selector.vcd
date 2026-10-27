@@ -1,0 +1,55 @@
+$date
+	Tue Oct 27 09:20:10 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module max_selector_tb $end
+$var wire 3 ! max [2:0] $end
+$var reg 3 " a [2:0] $end
+$var reg 3 # b [2:0] $end
+$scope module dut $end
+$var wire 3 $ a [2:0] $end
+$var wire 3 % b [2:0] $end
+$var wire 3 & max [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110 &
+b101 %
+b110 $
+b101 #
+b110 "
+b110 !
+$end
+#10000
+b100 #
+b100 %
+#20000
+b100 !
+b100 &
+b11 #
+b11 %
+b100 "
+b100 $
+#30000
+b100 #
+b100 %
+b10 "
+b10 $
+#40000
+b101 !
+b101 &
+b10 #
+b10 %
+b101 "
+b101 $
+#50000
