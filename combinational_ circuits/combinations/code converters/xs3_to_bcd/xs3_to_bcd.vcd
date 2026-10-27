@@ -1,0 +1,74 @@
+$date
+	Tue Oct 27 08:59:17 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module xs3_to_bcd_tb $end
+$var wire 4 ! bcd [3:0] $end
+$var reg 4 " xs3 [3:0] $end
+$scope module dut $end
+$var wire 4 # xs3 [3:0] $end
+$var reg 4 $ bcd [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+b11 #
+b11 "
+b0 !
+$end
+#10000
+b1 !
+b1 $
+b100 "
+b100 #
+#20000
+b10 !
+b10 $
+b101 "
+b101 #
+#30000
+b11 !
+b11 $
+b110 "
+b110 #
+#40000
+b100 !
+b100 $
+b111 "
+b111 #
+#50000
+b101 !
+b101 $
+b1000 "
+b1000 #
+#60000
+b110 !
+b110 $
+b1001 "
+b1001 #
+#70000
+b111 !
+b111 $
+b1010 "
+b1010 #
+#80000
+b1000 !
+b1000 $
+b1011 "
+b1011 #
+#90000
+b1001 !
+b1001 $
+b1100 "
+b1100 #
+#100000
