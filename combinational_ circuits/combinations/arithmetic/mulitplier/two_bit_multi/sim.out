@@ -8,54 +8,54 @@
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
-S_0x5f48ee573dc0 .scope package, "$unit" "$unit" 2 1;
+S_0x613f73af1dc0 .scope package, "$unit" "$unit" 2 1;
  .timescale 0 0;
-S_0x5f48ee573f50 .scope module, "two_bit_multi_tb" "two_bit_multi_tb" 3 3;
+S_0x613f73af1f50 .scope module, "two_bit_multi_tb" "two_bit_multi_tb" 3 3;
  .timescale -9 -12;
-v0x5f48ee587a30_0 .var "a", 1 0;
-v0x5f48ee587af0_0 .var "b", 1 0;
-v0x5f48ee587bc0_0 .net "product", 3 0, L_0x5f48ee587f70;  1 drivers
-S_0x5f48ee53a490 .scope module, "dut" "two_bit_multi" 3 8, 4 1 0, S_0x5f48ee573f50;
+v0x613f73b05a30_0 .var "a", 1 0;
+v0x613f73b05af0_0 .var "b", 1 0;
+v0x613f73b05bc0_0 .net "product", 3 0, L_0x613f73b05f70;  1 drivers
+S_0x613f73ab8490 .scope module, "dut" "two_bit_multi" 3 8, 4 1 0, S_0x613f73af1f50;
  .timescale 0 0;
     .port_info 0 /INPUT 2 "a";
     .port_info 1 /INPUT 2 "b";
     .port_info 2 /OUTPUT 4 "product";
-v0x5f48ee53a6c0_0 .net *"_ivl_0", 3 0, L_0x5f48ee587cc0;  1 drivers
-L_0x70834d5b7018 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
-v0x5f48ee587440_0 .net *"_ivl_3", 1 0, L_0x70834d5b7018;  1 drivers
-v0x5f48ee587520_0 .net *"_ivl_4", 3 0, L_0x5f48ee587e30;  1 drivers
-L_0x70834d5b7060 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
-v0x5f48ee5875e0_0 .net *"_ivl_7", 1 0, L_0x70834d5b7060;  1 drivers
-v0x5f48ee5876c0_0 .net "a", 1 0, v0x5f48ee587a30_0;  1 drivers
-v0x5f48ee5877f0_0 .net "b", 1 0, v0x5f48ee587af0_0;  1 drivers
-v0x5f48ee5878d0_0 .net "product", 3 0, L_0x5f48ee587f70;  alias, 1 drivers
-L_0x5f48ee587cc0 .concat [ 2 2 0 0], v0x5f48ee587a30_0, L_0x70834d5b7018;
-L_0x5f48ee587e30 .concat [ 2 2 0 0], v0x5f48ee587af0_0, L_0x70834d5b7060;
-L_0x5f48ee587f70 .arith/mult 4, L_0x5f48ee587cc0, L_0x5f48ee587e30;
-    .scope S_0x5f48ee573f50;
+v0x613f73ab86c0_0 .net *"_ivl_0", 3 0, L_0x613f73b05cc0;  1 drivers
+L_0x7b8a9e1b7018 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x613f73b05440_0 .net *"_ivl_3", 1 0, L_0x7b8a9e1b7018;  1 drivers
+v0x613f73b05520_0 .net *"_ivl_4", 3 0, L_0x613f73b05e30;  1 drivers
+L_0x7b8a9e1b7060 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x613f73b055e0_0 .net *"_ivl_7", 1 0, L_0x7b8a9e1b7060;  1 drivers
+v0x613f73b056c0_0 .net "a", 1 0, v0x613f73b05a30_0;  1 drivers
+v0x613f73b057f0_0 .net "b", 1 0, v0x613f73b05af0_0;  1 drivers
+v0x613f73b058d0_0 .net "product", 3 0, L_0x613f73b05f70;  alias, 1 drivers
+L_0x613f73b05cc0 .concat [ 2 2 0 0], v0x613f73b05a30_0, L_0x7b8a9e1b7018;
+L_0x613f73b05e30 .concat [ 2 2 0 0], v0x613f73b05af0_0, L_0x7b8a9e1b7060;
+L_0x613f73b05f70 .arith/mult 4, L_0x613f73b05cc0, L_0x613f73b05e30;
+    .scope S_0x613f73af1f50;
 T_0 ;
     %vpi_call/w 3 15 "$dumpfile", "two_bit_multi.vcd" {0 0 0};
-    %vpi_call/w 3 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5f48ee573f50 {0 0 0};
-    %vpi_call/w 3 18 "$monitor", "a=%b b=%b product=%b", v0x5f48ee587a30_0, v0x5f48ee587af0_0, v0x5f48ee587bc0_0 {0 0 0};
+    %vpi_call/w 3 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x613f73af1f50 {0 0 0};
+    %vpi_call/w 3 18 "$monitor", "a=%b b=%b product=%b", v0x613f73b05a30_0, v0x613f73b05af0_0, v0x613f73b05bc0_0 {0 0 0};
     %pushi/vec4 0, 0, 2;
-    %store/vec4 v0x5f48ee587a30_0, 0, 2;
+    %store/vec4 v0x613f73b05a30_0, 0, 2;
     %pushi/vec4 0, 0, 2;
-    %store/vec4 v0x5f48ee587af0_0, 0, 2;
+    %store/vec4 v0x613f73b05af0_0, 0, 2;
     %delay 10000, 0;
     %pushi/vec4 1, 0, 2;
-    %store/vec4 v0x5f48ee587a30_0, 0, 2;
+    %store/vec4 v0x613f73b05a30_0, 0, 2;
     %pushi/vec4 2, 0, 2;
-    %store/vec4 v0x5f48ee587af0_0, 0, 2;
+    %store/vec4 v0x613f73b05af0_0, 0, 2;
     %delay 10000, 0;
     %pushi/vec4 2, 0, 2;
-    %store/vec4 v0x5f48ee587a30_0, 0, 2;
+    %store/vec4 v0x613f73b05a30_0, 0, 2;
     %pushi/vec4 3, 0, 2;
-    %store/vec4 v0x5f48ee587af0_0, 0, 2;
+    %store/vec4 v0x613f73b05af0_0, 0, 2;
     %delay 10000, 0;
     %pushi/vec4 3, 0, 2;
-    %store/vec4 v0x5f48ee587a30_0, 0, 2;
+    %store/vec4 v0x613f73b05a30_0, 0, 2;
     %pushi/vec4 3, 0, 2;
-    %store/vec4 v0x5f48ee587af0_0, 0, 2;
+    %store/vec4 v0x613f73b05af0_0, 0, 2;
     %delay 10000, 0;
     %vpi_call/w 3 25 "$finish" {0 0 0};
     %end;
