@@ -1,0 +1,78 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x60e937ff9dd0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x60e937ff9f60 .scope module, "ones_counter_tb" "ones_counter_tb" 3 2;
+ .timescale -9 -12;
+v0x60e938010880_0 .var "a", 3 0;
+v0x60e938010940_0 .net "count", 2 0, L_0x60e938011560;  1 drivers
+S_0x60e937fc0490 .scope module, "dut" "ones_counter" 3 7, 4 1 0, S_0x60e937ff9f60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /OUTPUT 3 "count";
+v0x60e937fc0670_0 .net *"_ivl_1", 0 0, L_0x60e938010a10;  1 drivers
+L_0x7ddaa3157060 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x60e93800fad0_0 .net *"_ivl_11", 1 0, L_0x7ddaa3157060;  1 drivers
+v0x60e93800fbb0_0 .net *"_ivl_12", 2 0, L_0x60e938010e60;  1 drivers
+v0x60e93800fc70_0 .net *"_ivl_15", 0 0, L_0x60e938011010;  1 drivers
+v0x60e93800fd50_0 .net *"_ivl_16", 2 0, L_0x60e9380110f0;  1 drivers
+L_0x7ddaa31570a8 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x60e93800fe80_0 .net *"_ivl_19", 1 0, L_0x7ddaa31570a8;  1 drivers
+v0x60e93800ff60_0 .net *"_ivl_2", 2 0, L_0x60e938010ae0;  1 drivers
+v0x60e938010040_0 .net *"_ivl_20", 2 0, L_0x60e9380111e0;  1 drivers
+v0x60e938010120_0 .net *"_ivl_23", 0 0, L_0x60e938011370;  1 drivers
+v0x60e938010200_0 .net *"_ivl_24", 2 0, L_0x60e938011410;  1 drivers
+L_0x7ddaa31570f0 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x60e9380102e0_0 .net *"_ivl_27", 1 0, L_0x7ddaa31570f0;  1 drivers
+L_0x7ddaa3157018 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x60e9380103c0_0 .net *"_ivl_5", 1 0, L_0x7ddaa3157018;  1 drivers
+v0x60e9380104a0_0 .net *"_ivl_7", 0 0, L_0x60e938010c20;  1 drivers
+v0x60e938010580_0 .net *"_ivl_8", 2 0, L_0x60e938010cc0;  1 drivers
+v0x60e938010660_0 .net "a", 3 0, v0x60e938010880_0;  1 drivers
+v0x60e938010740_0 .net "count", 2 0, L_0x60e938011560;  alias, 1 drivers
+L_0x60e938010a10 .part v0x60e938010880_0, 0, 1;
+L_0x60e938010ae0 .concat [ 1 2 0 0], L_0x60e938010a10, L_0x7ddaa3157018;
+L_0x60e938010c20 .part v0x60e938010880_0, 1, 1;
+L_0x60e938010cc0 .concat [ 1 2 0 0], L_0x60e938010c20, L_0x7ddaa3157060;
+L_0x60e938010e60 .arith/sum 3, L_0x60e938010ae0, L_0x60e938010cc0;
+L_0x60e938011010 .part v0x60e938010880_0, 2, 1;
+L_0x60e9380110f0 .concat [ 1 2 0 0], L_0x60e938011010, L_0x7ddaa31570a8;
+L_0x60e9380111e0 .arith/sum 3, L_0x60e938010e60, L_0x60e9380110f0;
+L_0x60e938011370 .part v0x60e938010880_0, 3, 1;
+L_0x60e938011410 .concat [ 1 2 0 0], L_0x60e938011370, L_0x7ddaa31570f0;
+L_0x60e938011560 .arith/sum 3, L_0x60e9380111e0, L_0x60e938011410;
+    .scope S_0x60e937ff9f60;
+T_0 ;
+    %vpi_call/w 3 13 "$dumpfile", "ones_counter.vcd" {0 0 0};
+    %vpi_call/w 3 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x60e937ff9f60 {0 0 0};
+    %vpi_call/w 3 16 "$monitor", "time=%0t | a=%b | count=%b", $time, v0x60e938010880_0, v0x60e938010940_0 {0 0 0};
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x60e938010880_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v0x60e938010880_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x60e938010880_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x60e938010880_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 23 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "ones_counter_tb.v";
+    "ones_counter.v";
