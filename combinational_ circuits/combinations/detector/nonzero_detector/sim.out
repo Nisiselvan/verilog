@@ -1,0 +1,52 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x601b6ed51490 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x601b6ed51620 .scope module, "nonzero_detector_tb" "nonzero_detector_tb" 3 3;
+ .timescale -9 -12;
+v0x601b6ed9d1a0_0 .var "a", 3 0;
+v0x601b6ed9d290_0 .net "nonzero", 0 0, L_0x601b6ed9d390;  1 drivers
+S_0x601b6ed8a770 .scope module, "dut" "zero_detector" 3 6, 4 1 0, S_0x601b6ed51620;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /OUTPUT 1 "nonzero";
+L_0x7ebff4db7018 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0x601b6ed8a950_0 .net/2u *"_ivl_0", 3 0, L_0x7ebff4db7018;  1 drivers
+v0x601b6ed9cfc0_0 .net "a", 3 0, v0x601b6ed9d1a0_0;  1 drivers
+v0x601b6ed9d0a0_0 .net "nonzero", 0 0, L_0x601b6ed9d390;  alias, 1 drivers
+L_0x601b6ed9d390 .cmp/ne 4, v0x601b6ed9d1a0_0, L_0x7ebff4db7018;
+    .scope S_0x601b6ed51620;
+T_0 ;
+    %vpi_call/w 3 12 "$dumpfile", "nonzero_detector.vcd" {0 0 0};
+    %vpi_call/w 3 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x601b6ed51620 {0 0 0};
+    %vpi_call/w 3 14 "$monitor", "$time=%0t | a=%b | nonzero=%b", $time, v0x601b6ed9d1a0_0, v0x601b6ed9d290_0 {0 0 0};
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x601b6ed9d1a0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x601b6ed9d1a0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x601b6ed9d1a0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x601b6ed9d1a0_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "nonzero_detector_tb.v";
+    "nonzero_detector.v";

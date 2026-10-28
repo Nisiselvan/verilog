@@ -1,0 +1,38 @@
+$date
+	Wed Oct 28 08:09:00 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module nonzero_detector_tb $end
+$var wire 1 ! nonzero $end
+$var reg 4 " a [3:0] $end
+$scope module dut $end
+$var wire 4 # a [3:0] $end
+$var wire 1 ! nonzero $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10 #
+b10 "
+1!
+$end
+#10000
+b11 "
+b11 #
+#20000
+b1000 "
+b1000 #
+#30000
+0!
+b0 "
+b0 #
+#40000
