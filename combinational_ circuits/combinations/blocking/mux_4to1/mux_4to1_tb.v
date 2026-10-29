@@ -1,0 +1,42 @@
+
+`timescale 1ns/1ps
+
+module mux_4to1_tb;
+
+    reg a, b, c, d;
+    reg [1:0] sel;
+    wire y;
+
+    mux_4to1 dut (
+        .a(a),
+        .b(b),
+        .c(c),
+        .d(d),
+        .sel(sel),
+        .y(y)
+    );
+
+    initial begin
+        $dumpfile("mux_4to1.vcd");
+        $dumpvars(0, mux_4to1_tb);
+
+        $monitor("time=%0t | sel=%b | a=%b b=%b c=%b d=%b | y=%b",$time, sel, a, b, c, d, y);
+
+        a = 1;
+        b = 0;
+        c = 1;
+        d = 0;
+
+        sel = 2'b00;
+        #10;
+        sel = 2'b01;
+        #10;
+        sel = 2'b10;
+        #10;
+        sel = 2'b11;
+        #10;
+
+        $finish;
+    end
+
+endmodule

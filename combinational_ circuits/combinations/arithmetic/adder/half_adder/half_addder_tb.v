@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module half_addder_tb;
 
     reg A, B;

@@ -1,0 +1,11 @@
+module toggle_ff(
+    input clk, t,
+    output reg q
+);
+
+always @(posedge clk) begin
+    if (t)
+       q <= ~q;
+end
+
+endmodule
