@@ -1,0 +1,67 @@
+$date
+	Fri Oct 30 09:51:08 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module up_counter_tb $end
+$var wire 3 ! q [2:0] $end
+$var reg 1 " clk $end
+$var reg 1 # rst $end
+$scope module dut $end
+$var wire 1 " clk $end
+$var wire 1 # rst $end
+$var reg 3 $ q [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx $
+1#
+0"
+bx !
+$end
+#10000
+b0 !
+b0 $
+1"
+#20000
+0"
+0#
+#30000
+b1 !
+b1 $
+1"
+#40000
+0"
+#50000
+b10 !
+b10 $
+1"
+#60000
+0"
+#70000
+b11 !
+b11 $
+1"
+#80000
+0"
+#90000
+b100 !
+b100 $
+1"
+#100000
+0"
+#110000
+b101 !
+b101 $
+1"
+#120000
+0"
